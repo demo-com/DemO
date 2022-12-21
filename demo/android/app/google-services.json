@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025773887564",
+    "project_id": "projectpracticum-b95ed",
+    "storage_bucket": "projectpracticum-b95ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025773887564:android:95d3bfc19f557aa84014e9",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025773887564-luetrjsin08da8h2o949ugs5qa4jva80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6d5Yoy6NJJaOuMI1ubBJyrQ8akPn4yGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025773887564-luetrjsin08da8h2o949ugs5qa4jva80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
