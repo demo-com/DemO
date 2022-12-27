@@ -11,6 +11,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: _buildAppBar,
+      body:_buildBody,
+      // bottomNavigationBar: _buildBottomNavigationBar,
+    );
   }
+  get _buildAppBar{
+    return AppBar(
+      title:const Text("HomeScreen"),
+    );
+  }
+  get _buildBody{
+    return Container(
+      alignment:Alignment.center,
+      width: double.infinity,
+      height:double.infinity,
+      color: Colors.grey,
+      child:const Text("BodyScreen"),
+    );
+  }
+  
 }
