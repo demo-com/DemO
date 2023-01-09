@@ -1,5 +1,6 @@
 
 
+import 'package:demo/Components/designcomponentregister.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -19,11 +20,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
   get _buildBody{
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      alignment:Alignment.center,
-      padding: const EdgeInsets.all(0.8),
-      color:Colors.grey,
+      alignment:Alignment.topCenter,
+      child:Column(
+          children: [
+            appLogo("assets/app_icon.png",context),
+            Container(
+                margin:const EdgeInsets.all(10.0),
+                padding:const EdgeInsets.fromLTRB(15.0, 20.0, 15.0,20.0),
+                width:(MediaQuery.of(context).size.width),
+                height: ( MediaQuery.of(context).size.height),
+              ),
+          ],
+        )
     );
   }
 }

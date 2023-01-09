@@ -29,7 +29,7 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
           borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
         ),
         keyboardType: isPasswordType
-        ? TextInputType.visiblePassword
+        ? (TextInputType.visiblePassword)
         : TextInputType.emailAddress,
       );
    }

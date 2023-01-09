@@ -2,6 +2,7 @@
 import 'package:demo/Screens/homescreen.dart';
 import 'package:demo/Screens/signupscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import '../Components/designclipper.dart';
 import '../Components/designcolors.dart';
@@ -34,9 +35,9 @@ class _SignInScreenState extends State<SignInScreen> {
       });
     }on FirebaseAuthException  catch(e){
       if(e.code == 'user-not-found'){
-       
+       _showTopFlath(const Text("Invalid user . . . !"));
       }else if(e.code == 'wrong-password'){
-        
+        _showTopFlath(const Text("Password went wrong . . . !"));
       }
     }
   }
@@ -45,6 +46,37 @@ class _SignInScreenState extends State<SignInScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: _buildBody,
+    );
+  }
+  //build flash handle when user signin
+  void _showTopFlath(Text erroText,{FlashBehavior style = FlashBehavior.fixed}){
+    showFlash(
+      context: context,
+      duration:const Duration( seconds:2),
+      persistent: true,
+      builder: ((context, controller) {
+        return Flash(
+          controller: controller,
+          backgroundColor: Colors.white,
+          brightness: Brightness.light,
+          barrierColor: Colors.black38,
+          barrierDismissible: true,
+          behavior: style,
+          position: FlashPosition.top,
+          child:FlashBar(
+            content:erroText,
+            primaryAction: TextButton(
+              onPressed: () {},
+              child: const Text(
+                'Try again . . .!',
+                style: TextStyle(
+                color: Colors.black,
+              )
+            ),
+           ),
+          )
+        );
+      })
     );
   }
   get _buildBody=>Container(
@@ -147,7 +179,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                textButton("view?", (){}),
+                                const SizedBox(width: 50.0,),
                                 const SizedBox(width: 25.0,),
                                 textButton("for got your passwrod?", (){})
                               ],

@@ -41,7 +41,7 @@ dependencies:
   firebase_auth: ^4.2.3
   get: ^4.6.5
   flash: ^2.0.5
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
