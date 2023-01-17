@@ -1,11 +1,11 @@
 
+import 'package:demo/Screens/homescreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import '../Components/designclipper.dart';
 import '../Components/designcolors.dart';
 import '../Components/signinsignupcomp.dart';
-import 'registerscreen.dart';
 
 
 class SignUpScreen extends StatefulWidget {
@@ -29,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder:(context)=>const RegisterScreen()
+            builder:(context)=>const HomeScreen()
           )
         );
       });

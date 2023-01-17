@@ -12,23 +12,39 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar,
       body:_buildBody,
-      // bottomNavigationBar: _buildBottomNavigationBar,
-    );
-  }
-  get _buildAppBar{
-    return AppBar(
-      title:const Text("HomeScreen"),
     );
   }
   get _buildBody{
-    return Container(
-      alignment:Alignment.center,
-      width: double.infinity,
-      height:double.infinity,
-      color: Colors.grey,
-      child:const Text("BodyScreen"),
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          leading: IconButton(
+            icon:const CircleAvatar(
+              foregroundColor: Colors.white70,
+              radius:50.0,
+              backgroundImage: AssetImage("assets/user_icon.png"),
+            ),
+            onPressed: (){},
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) => ListTile(
+              tileColor: (index % 2 == 0) ? Colors.white : Colors.green[50],
+              title: Center(
+                child: Text('$index',
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 50,
+                        color: Colors.greenAccent[400]) //TextStyle
+                ), //Text
+              ), //Center
+            ), 
+            childCount: 50,
+          ),
+        ), 
+      ],
     );
   }
   
