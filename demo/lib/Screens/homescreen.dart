@@ -1,4 +1,5 @@
 
+import 'package:demo/Screens/profilescreen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
               radius:50.0,
               backgroundImage: AssetImage("assets/user_icon.png"),
             ),
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: ((context) =>const ProfilePage()))
+              );
+            },
           ),
         ),
         SliverList(
