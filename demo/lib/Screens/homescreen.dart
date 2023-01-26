@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon:const CircleAvatar(
               foregroundColor: Colors.white70,
               radius:50.0,
-              backgroundImage: AssetImage("assets/user_icon.png"),
+              backgroundImage: AssetImage("assets/profile_user.jpg"),
             ),
             onPressed: (){
               Navigator.push(

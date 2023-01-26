@@ -62,7 +62,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children:const [
                      CircleAvatar(
-                      backgroundImage: AssetImage('asset/icons/profile.jpg'),
+                      backgroundImage: AssetImage('assets/profile_user.jpg'),
                       radius: 60,
                     ),
                      SizedBox(height: 10,),
