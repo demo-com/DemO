@@ -1,19 +1,27 @@
 
-import 'package:demo/Screens/profilescreen.dart';
 import 'package:flutter/material.dart';
+
+import '../Components/mydrawerfooter.dart';
+import '../Components/mydrawerheader.dart';
+import '../Components/mydrawerlist.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
+  
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  final _scaffoldKey = GlobalKey<ScaffoldState>(); 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key:_scaffoldKey,
       body:_buildBody,
+      drawer: _buildDrawer,
     );
   }
   get _buildBody{
@@ -27,31 +35,24 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundImage: AssetImage("assets/profile_user.jpg"),
             ),
             onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: ((context) =>const ProfilePage()))
-              );
+              _scaffoldKey.currentState?.openDrawer();
             },
           ),
         ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) => ListTile(
-              tileColor: (index % 2 == 0) ? Colors.white : Colors.green[50],
-              title: Center(
-                child: Text('$index',
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 50,
-                        color: Colors.greenAccent[400]) //TextStyle
-                ), //Text
-              ), //Center
-            ), 
-            childCount: 50,
-          ),
-        ), 
       ],
     );
   }
-  
+  get _buildDrawer{
+    return Drawer(
+      child: SingleChildScrollView(
+        child:Column(
+          children:const [
+            MyDrawerHeader(),
+            MyDrawerList(),
+            MyDrawerFooter(),
+          ],
+        ),
+      ),
+    );
+  }
 }

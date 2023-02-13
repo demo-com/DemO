@@ -40,6 +40,7 @@ dependencies:
   firebase_core: ^2.4.0
   firebase_auth: ^4.2.3
   flash: ^2.0.5
+  page_transition: ^2.0.9
 
 dev_dependencies:
   flutter_test:

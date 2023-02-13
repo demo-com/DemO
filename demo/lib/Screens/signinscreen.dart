@@ -4,6 +4,7 @@ import 'package:demo/Screens/signupscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import '../Components/designclipper.dart';
 import '../Components/designcolors.dart';
 import '../Components/signinsignupcomp.dart';
@@ -242,10 +243,13 @@ class _SignInScreenState extends State<SignInScreen> {
                                (){
                                  Navigator.push(
                                    context,
-                                   MaterialPageRoute(
-                                     builder: (context)=>const SignUpScreen()
-                                    )
-                                  );
+                                   PageTransition(
+                                      curve: Curves.linear,
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: const Duration(milliseconds: 500),
+                                      child: const SignUpScreen(),
+                                  ),
+                                );
                                },
                             ),
                              const SizedBox(height: 20.0,),
