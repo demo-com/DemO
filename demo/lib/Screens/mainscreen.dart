@@ -1,6 +1,7 @@
 
 import 'package:demo/Screens/demoscreen.dart';
 import 'package:demo/Screens/homescreen.dart';
+import 'package:demo/Screens/mainpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class MainScreen extends StatelessWidget {
             return _error(context);
           }
           if(snapshot.hasData){
-            return const HomeScreen();
+            return const MainPage();
           }
          else{
            return const DemoScreen();
@@ -37,7 +38,7 @@ class MainScreen extends StatelessWidget {
     return Center(
       child: Text(
         "Something went wrong...!",
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.labelMedium,
       ),
     );
   }

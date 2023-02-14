@@ -1,5 +1,6 @@
 
 import 'package:demo/Screens/homescreen.dart';
+import 'package:demo/Screens/mainpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             curve: Curves.linear,
             type: PageTransitionType.rightToLeft,
             duration: const Duration(milliseconds: 500),
-            child: const HomeScreen(),
+            child: const MainPage(),
           ),
         );
       });

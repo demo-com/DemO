@@ -1,5 +1,6 @@
 
 import 'package:demo/Screens/homescreen.dart';
+import 'package:demo/Screens/mainpage.dart';
 import 'package:demo/Screens/signupscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash/flash.dart';
@@ -31,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder:(context)=>const HomeScreen()
+            builder:(context)=>const MainPage()
         ))
       });
     }on FirebaseAuthException  catch(e){

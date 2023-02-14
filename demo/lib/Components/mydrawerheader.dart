@@ -62,7 +62,7 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
                 PageTransition(
                     curve: Curves.linear,
                     type: PageTransitionType.topToBottom,
-                    duration: const Duration(milliseconds: 2000),
+                    duration: const Duration(milliseconds: 1000),
                     child: const ProfilePage(),
                 ),
               );
